@@ -16,6 +16,7 @@ echo -e "Linux Mint Ruby+Rails installation\n\n"
 echo "Here we go!"
 cd ~
 echo -e "\e[01;32mDownloading package lists...\e[00m"
+echo "You may need to enter your password multiple times."
 sudo apt-get update
 
 
@@ -43,7 +44,6 @@ else
 	sudo apt-get install g++
 	git clone https://github.com/joyent/node.git .node
 	cd .node
-	git checkout v0.6.18 #Try checking nodejs.org for what the stable version is
 	./configure && make && sudo make install
 fi
 
@@ -75,5 +75,5 @@ fi
 
 echo -e "\e[01;32mInstall completed, you should be good to go.\e[00m"
 echo " You may need to set your terminal emulator to run as a login shell, or"
-echo " run 'bash --login' to get it to work though."
+echo " run 'bash --login' to get the rails command to work properly."
 # Hurrah

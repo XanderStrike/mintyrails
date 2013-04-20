@@ -1,7 +1,7 @@
 mintyrails.sh
 =============
 
-Easy ruby+rails bash install script for Mint.
+Easy RVM ruby+rails bash install script for Mint.
 
 This script will take you from zero to development on a fresh, updated Linux Mint 13/14 system. It's inspired by Josh Frye's Rails Ready (https://github.com/joshfng/railsready/) but simplified for Mint and tailored to a development environment.
 
