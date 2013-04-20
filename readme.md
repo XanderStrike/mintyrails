@@ -15,6 +15,7 @@ This script will take you from zero to development on a fresh, updated Linux Min
 * Imagemagick (optional)
 
 ####Install
-  * `wget --no-check-certificate "https://raw.github.com/XanderStrike/mintyrails/master/mintyrails.sh" && bash mintyrails.sh`
+Upgrade your system via the package manager or `apt-get update && apt-get upgrade` then run
+  `wget --no-check-certificate "https://raw.github.com/XanderStrike/mintyrails/master/mintyrails.sh" && bash mintyrails.sh`
 
 If you have comments or suggestions, let me know at xanderstrike@gmail.com or send me a pull request.
