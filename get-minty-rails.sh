@@ -14,13 +14,12 @@ cd ~
 
 echo -e "\e[01;32mInstalling prerequisites...\e[00m"
 
-pm="apt-get"
-sudo $pm -y install wget curl build-essential clang g++ vim bison openssl zlib1g libxslt1.1 libssl-dev libxslt1-dev libxml2 libffi-dev libyaml-dev libxslt-dev autoconf libc6-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libtool
-sudo $pm -y install libsqlite3-0 sqlite3 libsqlite3-dev mysql-client libmysqlclient-dev
+sudo apt-get -y install wget curl build-essential clang g++ vim bison openssl zlib1g libxslt1.1 libssl-dev libxslt1-dev libxml2 libffi-dev libyaml-dev libxslt-dev autoconf libc6-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libtool
+sudo apt-get -y install libsqlite3-0 sqlite3 libsqlite3-dev mysql-client libmysqlclient-dev
 
 
 echo -e "\e[01;32mInstalling Git...\e[00m"
-sudo $pm -y install git-core
+sudo apt-get -y install git-core
 
 
 echo -e "\e[01;32mInstalling Ruby+Rails via RVM...\e[00m"
@@ -49,7 +48,7 @@ if [[ $a == "N" || $a == "n" ]]; then
 	echo "Skipping Imagemagick"
 else
 	echo -e "\e[01;32mInstalling Imagemagick.\e[00m"
-	sudo $pm -y install imagemagick libmagickcore-dev libmagickwand-dev
+	sudo apt-get -y install imagemagick libmagickcore-dev libmagickwand-dev
 fi
 
 echo -e "Generate SSH Keys? [Y/n]\c"
@@ -70,5 +69,3 @@ fi
 echo -e "\e[01;32mInstall completed, you should be good to go.\e[00m"
 echo " You may need to set your terminal emulator to run as a login shell, or"
 echo " run 'bash --login' to get it to work though. Annoying."
-
-
