@@ -17,7 +17,7 @@ echo -e "\e[01;32mInstalling prerequisites...\e[00m"
 pm="apt-get"
 sudo $pm -y install \
     wget curl build-essential clang \
-    g++ vim \
+    g++ vim\
     bison openssl zlib1g \
     libxslt1.1 libssl-dev libxslt1-dev \
     libxml2 libffi-dev libyaml-dev \
@@ -40,6 +40,24 @@ cd .node
 git checkout v0.6.18 #Try checking nodejs.org for what the stable version is
 ./configure && make && sudo make install
 
+
+echo -e "Generate SSH Keys? [Y/n]\c"
+read a
+if [[ $a == "N" || $a == "n" ]]; then
+	echo "Skipping SSH key generation."
+else
+	echo -e "\e[01;32mGenerating SSH keys.\e[00m"
+	echo -e "Enter Email Address: \c"
+	read b
+	ssh-keygen -t rsa -C $b
+	sudo apt-get install xclip
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+	echo "Key generated and placed in the clipboard."
+fi
+
+
 echo -e "\e[01;32mInstall completed, you should be good to go.\e[00m"
 echo " You may need to set your terminal emulator to run as a login shell, or"
 echo " run 'bash --login' to get it to work though. Annoying."
+
+
