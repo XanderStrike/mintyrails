@@ -1,38 +1,46 @@
+#mintyrails.sh
+# Easy ruby + rails installation scipt
 
-echo "Linux Mint Ruby+Rails installation\n\n"
-echo "Sets you up with a barebones rails development environment"
-echo -e " with node.js for a runtime.\n\n"
+# Sets you up with a barebones rails development environment
+#  with optional node.js for a runtime.
 
-echo "Most of this stolen from Josh Frye's Rails Ready"
-echo -e "		https://github.com/joshfng/railsready\n\n"
+# Inspired by Josh Frye's Rails Ready
+#   https://github.com/joshfng/railsready
 
-echo -e "Modified by Alex Standke\n\n"
+# Written by Alex Standke <xanderstrike@gmail.com>
+#   https://github.com/XanderStrike/mintyrails
 
+# License: MIT
+
+echo -e "Linux Mint Ruby+Rails installation\n\n"
 echo "Here we go!"
-
 cd ~
+echo -e "\e[01;32mDownloading package lists...\e[00m"
+sudo apt-get update
 
+
+# Basic stuff
 echo -e "\e[01;32mInstalling prerequisites...\e[00m"
-
-sudo apt-get -y install wget curl build-essential clang g++ vim bison openssl zlib1g libxslt1.1 libssl-dev libxslt1-dev libxml2 libffi-dev libyaml-dev libxslt-dev autoconf libc6-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libtool
-sudo apt-get -y install libsqlite3-0 sqlite3 libsqlite3-dev mysql-client libmysqlclient-dev
-
+sudo apt-get -y install wget build-essential clang vim bison openssl zlib1g libxslt1.1 libssl-dev libxslt1-dev libxml2 libffi-dev libyaml-dev libxslt-dev autoconf libc6-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libtool
+sudo apt-get -y install libsqlite3-0 sqlite3 libsqlite3-dev mysql-client libmysqlclient-dev curl
 
 echo -e "\e[01;32mInstalling Git...\e[00m"
 sudo apt-get -y install git-core
 
 
+# Get ruby/rails bundle set up
 echo -e "\e[01;32mInstalling Ruby+Rails via RVM...\e[00m"
 curl -L https://get.rvm.io | bash -s stable --autolibs=3 --rails
 
 
-# Node.js
-echo -e "Install Node.js [Y/n]\c"
+# Node.js for javascript
+echo -e "Install Node.js? [Y/n]\c"
 read a
 if [[ $a == "N" || $a == "n" ]]; then
 	echo "Skipping Node.js"
 else
 	echo -e "\e[01;32mInstalling node.js...\e[00m"
+	sudo apt-get install g++
 	git clone https://github.com/joyent/node.git .node
 	cd .node
 	git checkout v0.6.18 #Try checking nodejs.org for what the stable version is
@@ -40,8 +48,7 @@ else
 fi
 
 
-# Extras
-
+# Optional Extras
 echo -e "Install Imagemagick? [Y/n]\c"
 read a
 if [[ $a == "N" || $a == "n" ]]; then
@@ -68,4 +75,5 @@ fi
 
 echo -e "\e[01;32mInstall completed, you should be good to go.\e[00m"
 echo " You may need to set your terminal emulator to run as a login shell, or"
-echo " run 'bash --login' to get it to work though. Annoying."
+echo " run 'bash --login' to get it to work though."
+# Hurrah
