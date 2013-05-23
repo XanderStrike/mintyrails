@@ -67,7 +67,7 @@ else
 	echo -e "Enter Email Address: \c"
 	read b
 	ssh-keygen -t rsa -C $b
-	echo "Key generated, it can be found in ~/.ssh/."
+	echo "Key generated, it can be found in ~/.ssh"
 fi
 
 
