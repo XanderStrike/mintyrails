@@ -67,9 +67,7 @@ else
 	echo -e "Enter Email Address: \c"
 	read b
 	ssh-keygen -t rsa -C $b
-	sudo apt-get install xclip
-	xclip -sel clip < ~/.ssh/id_rsa.pub
-	echo "Key generated and placed in the clipboard."
+	echo "Key generated, it can be found in ~/.ssh/."
 fi
 
 
