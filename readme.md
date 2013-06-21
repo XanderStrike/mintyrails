@@ -22,3 +22,5 @@ Upgrade your system via the update manager or `apt-get update && apt-get upgrade
 While primarily designed for Mint, this script has been tested successfully on Ubuntu 12.04 and 12.10
 
 If you have comments or suggestions, let me know at xanderstrike@gmail.com or send me a pull request.
+
+**License**: [MIT](http://opensource.org/licenses/MIT)
