@@ -18,7 +18,7 @@ This script will take you from zero to development on a fresh, updated Linux Min
 Upgrade your system via the update manager or `apt-get update && apt-get upgrade` then run
   * `wget --no-check-certificate "https://raw.github.com/XanderStrike/mintyrails/master/mintyrails.sh" && bash mintyrails.sh`
 
-####Other systems
+####Notes
 While primarily designed for Mint, this script has been tested successfully on Ubuntu 12.04 and 12.10
 
 If you have comments or suggestions, let me know at xanderstrike@gmail.com or send me a pull request.
